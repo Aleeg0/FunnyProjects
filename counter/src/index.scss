@@ -1,12 +1,17 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("./fonts/NunitLight.ttf");
+}
+
 :root{
-    --cl-background: #8b8b8b;
+    --cl-background: rgba(125, 74, 255, 0.89);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "HelveticaNeue-Light", "HelveticaNeue-Light", "Arial", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 body{
@@ -21,4 +26,5 @@ body{
     transform: translateY(-10%);
 }
 
-@import "./Components/counter/counter.scss";
+@import "Components/Game/game.scss";
+@import "Components/Result/result.scss";

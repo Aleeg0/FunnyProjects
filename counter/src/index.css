@@ -35,6 +35,29 @@ body {
   padding: 18px;
   border-radius: 16px;
   font-family: "Nunito", sans-serif;
+  position: relative;
+}
+.game:before, .game:after {
+  content: "";
+  display: block;
+  height: 50px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.game:before {
+  width: 95%;
+  bottom: -10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+}
+.game:after {
+  width: 90%;
+  bottom: -20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -2;
 }
 .game .progressBar {
   width: 100%;
@@ -68,6 +91,37 @@ body {
 }
 .game li:hover {
   border: 2px solid rgba(0, 0, 0, 0.3);
+  background: linear-gradient(270deg, rgba(64, 174, 255, 0.6), rgba(7, 255, 27, 0.6));
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 18px;
+  border-radius: 16px;
+}
+.result img {
+  width: 90px;
+  height: 90px;
+}
+.result h1 {
+  margin: 20px 15px;
+}
+.result button {
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.result button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, rgba(64, 174, 255, 0.6), rgba(7, 255, 27, 0.6));
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import congratzImg from '../../images/Congratz.png';
 
 interface ResultProps {
     correct: number;
@@ -9,8 +10,8 @@ interface ResultProps {
 const Result: FC<ResultProps> = ({correct, count, onClickReset}) => {
     return (
         <div className="result">
-            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt='yee!'/>
-            <h2>Вы отгадали {correct} из {count}!</h2>
+            <img src={congratzImg} alt='yee!'/>
+            <h1>Вы отгадали {correct} из {count}!</h1>
             <button type="button" onClick={onClickReset}>Попробовать снова</button>
         </div>
     );

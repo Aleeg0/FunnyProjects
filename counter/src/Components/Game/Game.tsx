@@ -1,18 +1,31 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const Game = () => {
+interface GameProps {
+    progress: number;
+    question: {
+        title: string;
+        variants: Array<string>;
+    };
+    onClickVariant: (index:number) => void;
+}
+
+const Game: FC<GameProps> = ({progress,question,onClickVariant}) => {
     return (
         <div className="game">
             <div className="progressBar">
-                <div className='progress'></div>
+                <div className='progress' style={{width: `${progress}%`}} ></div>
             </div>
             <h1 className="gameTitle">
-                Что такое реакт?
+                {question.title}
             </h1>
             <ul>
-                <li>Библиотека</li>
-                <li>Фреймворк</li>
-                <li>Язык Программирования</li>
+                {
+                    question.variants.map((text,index) =>
+                        <li key={index}
+                            onClick={() => onClickVariant(index)}
+                        >{text}</li>
+                    )
+                }
             </ul>
         </div>
     );

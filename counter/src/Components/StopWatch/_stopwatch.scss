@@ -1,0 +1,73 @@
+.stopwatch{
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+
+    h1{
+        font-size: 30px;
+    }
+
+    .controls{
+        justify-content: space-between;
+        width: 36%;
+
+        button{
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
+            border-radius: 100%;
+        }
+
+        &__pause{
+            background-color: #9ffd7a;
+
+            &:hover{
+                background-color: #5efa21;
+            }
+        }
+
+        &__resume{
+            background-color: #fdd07a;
+
+            &:hover{
+                background-color: #ffc400;
+            }
+        }
+
+        &__reset{
+            background-color: #68d7fb;
+
+            &:hover{
+                background-color: #00c0ff;
+            }
+        }
+
+        &__cancel{
+            background-color: #ff7a63;
+
+            &:hover{
+                background-color: #ff4221;
+            }
+        }
+    }
+}
+
+.controls{
+    display: flex;
+
+    button{
+        border: none;
+        outline: none;
+        color: #3c3c3c;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+        &:hover{
+            color: #1c1c1c;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+    }
+}

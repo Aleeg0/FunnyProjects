@@ -1,0 +1,47 @@
+.stopwatchManager {
+    width: 380px;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 18px;
+    row-gap: 10px;
+    padding: 16px;
+
+    .controls{
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        button{
+            width: 40%;
+            height: 80%;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            text-align: center;
+            align-self: center;
+            padding: 8px 8px 16px;
+        }
+
+        &__reset{
+            background-color: #68d7fb;
+
+            &:hover{
+                background-color: #00c0ff;
+            }
+        }
+
+        &__add{
+            background-color: #9ffd7a;
+
+            &:hover{
+                background-color: #5efa21;
+            }
+        }
+    }
+}

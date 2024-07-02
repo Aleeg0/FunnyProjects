@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "HelveticaNeue-Light", "HelveticaNeue-Light", "Arial", sans-serif;
+  font-family: "JetBrains Mono", sans-serif;
 }
 
 body {
@@ -16,48 +16,114 @@ body {
 .app {
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  row-gap: 18px;
   justify-content: center;
   align-items: center;
   transform: translateY(-10%);
 }
 
-.counter {
+.stopwatch {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 380px;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  row-gap: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
 }
-
-.counter_text {
-  font-size: 90px;
+.stopwatch h1 {
+  font-size: 30px;
 }
-
-.counter_buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
+.stopwatch .controls {
+  justify-content: space-between;
+  width: 36%;
 }
-.counter_buttons button {
-  width: 90px;
+.stopwatch .controls button {
+  width: 36px;
   height: 36px;
-  font-size: 26px;
+  font-size: 20px;
+  border-radius: 100%;
+}
+.stopwatch .controls__pause {
+  background-color: #9ffd7a;
+}
+.stopwatch .controls__pause:hover {
+  background-color: #5efa21;
+}
+.stopwatch .controls__resume {
+  background-color: #fdd07a;
+}
+.stopwatch .controls__resume:hover {
+  background-color: #ffc400;
+}
+.stopwatch .controls__reset {
+  background-color: #68d7fb;
+}
+.stopwatch .controls__reset:hover {
+  background-color: #00c0ff;
+}
+.stopwatch .controls__cancel {
+  background-color: #ff7a63;
+}
+.stopwatch .controls__cancel:hover {
+  background-color: #ff4221;
+}
+
+.controls {
+  display: flex;
+}
+.controls button {
   border: none;
+  outline: none;
+  color: #3c3c3c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.controls button:hover {
+  color: #1c1c1c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.stopwatchManager {
+  width: 380px;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 18px;
+  row-gap: 10px;
+  padding: 16px;
+}
+.stopwatchManager .controls {
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.stopwatchManager .controls button {
+  width: 40%;
+  height: 80%;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  text-align: center;
+  align-self: center;
+  padding: 8px 8px 16px;
 }
-.counter_buttons button:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+.stopwatchManager .controls__reset {
+  background-color: #68d7fb;
 }
-.counter_buttons .counter_plus {
-  background-color: rgba(74, 213, 35, 0.85);
+.stopwatchManager .controls__reset:hover {
+  background-color: #00c0ff;
 }
-.counter_buttons .counter_minus {
-  background-color: rgba(255, 58, 43, 0.85);
+.stopwatchManager .controls__add {
+  background-color: #9ffd7a;
+}
+.stopwatchManager .controls__add:hover {
+  background-color: #5efa21;
 }
 
 /*# sourceMappingURL=index.css.map */

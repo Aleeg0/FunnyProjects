@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "HelveticaNeue-Light", "HelveticaNeue-Light", "Arial", sans-serif;
+    font-family: "JetBrains Mono",sans-serif;
 }
 
 body{
@@ -16,9 +16,12 @@ body{
 .app{
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    row-gap: 18px;
     justify-content: center;
     align-items: center;
     transform: translateY(-10%);
 }
 
-@import "./Components/counter/counter.scss";
+@import "Components/StopWatch/stopwatch";
+@import "Components/StopwatchManager/stopwatchManager";

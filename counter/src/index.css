@@ -136,7 +136,7 @@ body {
 .user__action {
   width: 26px;
   height: 26px;
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: none;
   border-radius: 8px;
   background-color: rgba(50, 205, 50, 0.8);
   cursor: pointer;
@@ -144,10 +144,11 @@ body {
   right: 10px;
   top: 16px;
   transition: all 0.2s ease-in-out;
+  padding: 2px;
 }
 .user__action:hover {
-  border: 2px solid rgb(0, 0, 0);
   background-color: rgb(50, 205, 50);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=index.css.map */

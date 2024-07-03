@@ -30,12 +30,13 @@ const User:FC<UserProps> = ({isInvited, onClickAction, id, email,
                     {email}
                 </p>
             </div>
-            <img
-                onClick={() => onClickAction(id)}
-                className={["user__action",(isInvited ? "minus": "plus")].join(" ")}
-                src={`/assets/${isInvited ? "minus" : "plus"}.svg`}
-                alt="Action"
-            />
+            <div className={["user__action", (isInvited ? "minus" : "plus")].join(" ")}>
+                <img
+                    onClick={() => onClickAction(id)}
+                    src={`/assets/${isInvited ? "minus" : "plus"}.svg`}
+                    alt="Action"
+                />
+            </div>
         </li>
     );
 };

@@ -1,4 +1,5 @@
 @mixin underline-animation($color) {
+
     &::after{
         position: absolute;
         content: "";
@@ -17,3 +18,33 @@
         transform: scaleX(1);
     }
 }
+
+@mixin button-animation($bg-hover-color) {
+    overflow: hidden;
+
+    img{
+        z-index: -1;
+        transition: filter 0.35s ease-in-out;
+    }
+
+    &:hover img{
+        filter: brightness(0.1);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: $bg-hover-color;
+        transition: width 0.35s ease-in-out;
+        z-index: 0;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+}
+

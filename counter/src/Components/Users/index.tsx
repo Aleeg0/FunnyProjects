@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Dummy from "./Dummy";
+import User from "./User";
 
-const Users = () => {
+interface UsersProps {
+    isLoading: boolean;
+}
+
+const Users:FC<UsersProps> = ({isLoading}) => {
     return (
         <div className="usersBox">
             <div className="searcher">
@@ -10,11 +15,17 @@ const Users = () => {
                 </svg>
                 <input type="text" placeholder="Search user..."/>
             </div>
-            <div className="usersList">
+            {isLoading ?
+            (<div className="dummyList">
                 <Dummy/>
                 <Dummy/>
                 <Dummy/>
-            </div>
+            </div>)
+                : (
+            <ul className="usersList">
+                <User/>
+            </ul>
+            )}
         </div>
     );
 };

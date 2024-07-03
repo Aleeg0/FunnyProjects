@@ -4,7 +4,7 @@ import Users from "./Components/Users";
 function App() {
     return (
         <div className="app">
-            <Users/>
+            <Users isLoading={false}/>
         </div>
     );
 }

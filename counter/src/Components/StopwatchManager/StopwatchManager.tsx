@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const StopwatchManager = () => {
+interface StopwatchManagerProps {
+    onClickAdd: () => void;
+    onClickReset: () => void;
+}
+
+const StopwatchManager: FC<StopwatchManagerProps> = ({onClickAdd,onClickReset}) => {
     return (
         <div className="stopwatchManager">
             <h1>Stopwatch manager</h1>
@@ -8,10 +13,12 @@ const StopwatchManager = () => {
                 <button
                     type="button"
                     className='controls__reset'
+                    onClick={onClickReset}
                 >Reset All</button>
                 <button
                     type="button"
                     className='controls__add'
+                    onClick={onClickAdd}
                 >Add</button>
             </div>
         </div>

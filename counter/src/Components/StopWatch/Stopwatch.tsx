@@ -1,6 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 
-const Stopwatch = () => {
+interface StopwatchProps {
+    id: number;
+    onClickDelete: (id:number) => void;
+}
+
+const Stopwatch: FC<StopwatchProps> = ({id,onClickDelete}) => {
     const [time,setTime] = React.useState<number>(0);
     const [isPaused,setIsPaused] = React.useState<boolean>(true);
     const timerId = React.useRef< ReturnType<typeof setInterval>| null>(null);
@@ -19,16 +24,7 @@ const Stopwatch = () => {
         }
     }, [isPaused]);
 
-    const start = () => {
-        setIsPaused(false);
-        startTime.current = Date.now() - time;
-    }
-
-    const pause = () => {
-        setIsPaused(true);
-    }
-
-    const ch = () => {
+    const changer = () => {
         if (isPaused){
             startTime.current = Date.now() - time;
         }
@@ -54,11 +50,11 @@ const Stopwatch = () => {
                 {milliseconds.toString().padStart(2,"0")}
             </h1>
             <div className="controls">
-                <button className={isPaused ? "controls__pause":"controls__resume"} onClick={ch}>
+                <button className={isPaused ? "controls__pause":"controls__resume"} onClick={changer}>
                     {isPaused ? `▷` : `||`}
                 </button>
                 <button className="controls__reset" onClick={resetStopwatch}>↻</button>
-                <button className="controls__cancel" onClick={pause}>✖</button>
+                <button className="controls__cancel" onClick={() => onClickDelete(id)}>✖</button>
             </div>
         </div>
     );

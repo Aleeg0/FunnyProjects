@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Stopwatch from "./Components/StopWatch/Stopwatch";
 import StopwatchManager from "./Components/StopwatchManager/StopwatchManager";
-import stopwatch from "./Components/StopWatch/Stopwatch";
 
 
 function App() {

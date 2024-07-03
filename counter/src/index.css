@@ -21,43 +21,4 @@ body {
   transform: translateY(-10%);
 }
 
-.counter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  row-gap: 20px;
-}
-
-.counter_text {
-  font-size: 90px;
-}
-
-.counter_buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-}
-.counter_buttons button {
-  width: 90px;
-  height: 36px;
-  font-size: 26px;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 5px;
-}
-.counter_buttons button:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-.counter_buttons .counter_plus {
-  background-color: rgba(74, 213, 35, 0.85);
-}
-.counter_buttons .counter_minus {
-  background-color: rgba(255, 58, 43, 0.85);
-}
-
 /*# sourceMappingURL=index.css.map */

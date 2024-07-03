@@ -6,11 +6,13 @@ import {IUser} from "../../Models/user";
 interface UsersProps {
     isLoading: boolean;
     users: IUser[];
+    invited: number[];
     searchValue: string;
     onChangeSearchValue: (event:React.ChangeEvent<HTMLInputElement>) => void;
+    onClickAction: (id:number) => void;
 }
 
-const Users:FC<UsersProps> = ({isLoading, users,searchValue,onChangeSearchValue}) => {
+const Users:FC<UsersProps> = ({isLoading, users,invited, searchValue,onChangeSearchValue,onClickAction}) => {
     return (
         <div className="usersBox">
             <div className="searcher">
@@ -27,11 +29,18 @@ const Users:FC<UsersProps> = ({isLoading, users,searchValue,onChangeSearchValue}
             </div>)
                 : (
             <ul className="usersList">
-                {users.map((user) => {
-                    return(
-                        <User key={user.id} {...user} />
-                    );
-                })}
+                {users.filter((user) => {
+                    const name = (user.first_name + user.last_name).toLowerCase();
+                    return name.includes(searchValue.toLowerCase())
+                        || user.email.includes(searchValue.toLowerCase());
+                }).map((user =>
+                    <User
+                        key={user.id}
+                        isInvited={invited.includes(user.id)}
+                        onClickAction={onClickAction}
+                        {...user}
+                    />
+                ))}
             </ul>
             )}
         </div>

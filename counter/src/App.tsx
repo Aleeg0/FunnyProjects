@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import Users from "./Components/Users";
 import {IUser} from "./Models/user";
+import Submit from "./Components/Submit/Submit";
 
 function App() {
 
     const [usersList, setUsersList] = useState<IUser[]>([]);
     const [invited,setInvited] = useState<number[]>([]);
     const [searchValue, setSearchValue] = useState<string>("");
+    const [isSend,setIsSend] = useState<boolean>(false);
 
     useEffect(() => {
         fetch("https://reqres.in/api/users")
@@ -27,16 +29,29 @@ function App() {
         }
     }
 
+    const onClickGoBack = () => {
+        setIsSend(false);
+        setInvited([]);
+    }
+
     return (
         <div className="app">
-            <Users
-                users={usersList}
-                invited={invited}
-                onClickAction={onClickAction}
-                isLoading={false}
-                searchValue={searchValue}
-                onChangeSearchValue={onChangeSearchValue}
-            />
+            {!isSend ?
+                <Users
+                    users={usersList}
+                    invited={invited}
+                    onClickAction={onClickAction}
+                    isLoading={false}
+                    searchValue={searchValue}
+                    onChangeSearchValue={onChangeSearchValue}
+                    setIsSend={setIsSend}
+                />
+                :
+                <Submit
+                    count={invited.length}
+                    onClickGoBack={onClickGoBack}
+                />
+            }
         </div>
     );
 }

@@ -8,6 +8,7 @@
     border-radius: 12px;
     padding: 10px;
     transform: translateY(20%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .convertBlock{
@@ -19,10 +20,12 @@
     margin: 10px;
 
     &__types{
-        height: 40%;
+        height: 25%;
+        margin-bottom: 9%;
     }
 
     ul{
+        height: 100%;
         list-style: none;
         display: flex;
         flex-direction: row;
@@ -63,7 +66,7 @@
     }
 
     &__input{
-        height: 60%;
+        height: 64%;
 
         input{
             width: 100%;

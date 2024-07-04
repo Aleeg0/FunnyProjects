@@ -12,7 +12,7 @@ const ConvertBlock: FC<ConvertBlockProps> = ({currencyTypes,currency,onClickCurr
                                                  value,onChangeValue}) => {
 
     const [isMoreOpen, setIsMoreOpen] = React.useState(false);
-    const defaultTypes = ["BYN","RUS","USD","EUR"];
+    const defaultTypes = ["BYN","RUB","USD","EUR"];
 
     return (
         <div className="convertBlock">

@@ -4,10 +4,13 @@ import {CurrencyTypes} from "../../Models/CurrencyTypes";
 interface ConvertBlockProps {
     currencyTypes: CurrencyTypes[];
     currency: CurrencyTypes;
-    onClickCurrency: (currency: CurrencyTypes) => void;
+    onClickCurrency: (currency: CurrencyTypes) => void
+    value:number;
+    onChangeValue: (value:number) => void;
 }
 
-const ConvertBlock: FC<ConvertBlockProps> = ({currencyTypes,currency,onClickCurrency}) => {
+const ConvertBlock: FC<ConvertBlockProps> = ({currencyTypes,currency,onClickCurrency,
+                                                 value,onChangeValue}) => {
     return (
         <div className="convertBlock">
             <div className="convertBlock__types">
@@ -28,9 +31,12 @@ const ConvertBlock: FC<ConvertBlockProps> = ({currencyTypes,currency,onClickCurr
             </div>
             <div className="convertBlock__input">
                 <input
+                    value={value}
+                    onChange={(event) => {
+                        onChangeValue(event.target.valueAsNumber)
+                    }}
                     type="number"
                     className="convertInput"
-                    placeholder="0"
                 />
             </div>
         </div>

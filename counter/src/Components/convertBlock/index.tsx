@@ -9,17 +9,22 @@ interface ConvertorProps {
 
 const Convertor:FC<ConvertorProps> = ({rates}) => {
 
-    const [fromCurrency, setFromCurrency] = React.useState<CurrencyTypes>(CurrencyTypes.BYN);
-    const [toCurrency, setToCurrency] = React.useState<CurrencyTypes>(CurrencyTypes.USD);
+    const [fromCurrency, setFromCurrency] = React.useState<string>("BYN");
+    const [toCurrency, setToCurrency] = React.useState<string>("USD");
     const [fromValue, setFromValue] = React.useState<number>(0);
     const [toValue, setToValue] = React.useState<number>(0);
 
-    const allTypes: CurrencyTypes[] = [CurrencyTypes.BYN, CurrencyTypes.RUB,CurrencyTypes.USD,CurrencyTypes.EUR];
+    //const allTypes: CurrencyTypes[] = [CurrencyTypes.BYN, CurrencyTypes.RUB,CurrencyTypes.USD,CurrencyTypes.EUR];
+
+    const allTypes = Object.keys(rates.data).map((currency)=> {
+        const details = rates.data[currency];
+        return details.code;
+    });
 
     const onChangeFromValue = (value: number) => {
         setFromValue(value);
-        setToValue(Number((value * rates.data[fromCurrency].value
-            / rates.data[toCurrency].value).toFixed(3)));
+        setToValue(Number((value * rates.data[toCurrency].value
+            / rates.data[fromCurrency].value).toFixed(3)));
     }
 
     const onChangeToValue = (value: number) => {

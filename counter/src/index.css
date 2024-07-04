@@ -1,17 +1,91 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 25 | @import "Components/convertBlock/ConvertBlock.tsx";
- *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   index.scss 25:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 25 \2502  @import \"Components/convertBlock/ConvertBlock.tsx\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   index.scss 25:9  root stylesheet";
+:root {
+  --cl-background: #8b8b8b;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Leelawadee UI", sans-serif;
+}
+
+body {
+  background-color: var(--cl-background);
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.convertor {
+  width: 60%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  transform: translateY(20%);
+}
+
+.convertBlock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+}
+.convertBlock__types {
+  height: 40%;
+}
+.convertBlock ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.convertBlock ul li {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  width: 22%;
+  text-align: center;
+  cursor: pointer;
+}
+.convertBlock ul li:last-child {
+  width: 12%;
+  border-right: none;
+  border-radius: 0 5px 5px 0;
+}
+.convertBlock ul li:last-child svg {
+  transform: translateY(10%);
+}
+.convertBlock ul li:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.convertBlock ul li:hover {
+  background-color: rgba(102, 209, 120, 0.55);
+}
+.convertBlock ul li.active {
+  background-color: rgb(103, 220, 121);
+}
+.convertBlock__input {
+  height: 60%;
+}
+.convertBlock__input input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 14px 4px 8px 14px;
+  font-size: 28px;
+  font-family: "JetBrains Mono SemiBold", sans-serif;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/*# sourceMappingURL=index.css.map */

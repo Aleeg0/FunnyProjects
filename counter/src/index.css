@@ -1,5 +1,5 @@
 :root {
-  --cl-background: #8b8b8b;
+  --cl-background: rgba(236, 197, 157, 0.46);
 }
 
 * {
@@ -29,6 +29,7 @@ body {
   border-radius: 12px;
   padding: 10px;
   transform: translateY(20%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .convertBlock {
@@ -40,9 +41,11 @@ body {
   margin: 10px;
 }
 .convertBlock__types {
-  height: 40%;
+  height: 25%;
+  margin-bottom: 9%;
 }
 .convertBlock ul {
+  height: 100%;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -75,7 +78,7 @@ body {
   background-color: rgb(103, 220, 121);
 }
 .convertBlock__input {
-  height: 60%;
+  height: 64%;
 }
 .convertBlock__input input {
   width: 100%;

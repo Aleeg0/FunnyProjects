@@ -11,6 +11,9 @@ const GalleryCollection = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [searchValue, setSearchValue] = useState<string>("");
 
+    //TODO добавить логику isLoading и ничего не найденно
+    //TODO добавить скелетоны для категорий и коллекций
+
     /*
         !!!
             I NOW THAT IT'S BAD TO USE STATIC PAGINATION LIMIT

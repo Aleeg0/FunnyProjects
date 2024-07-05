@@ -1,0 +1,8 @@
+@mixin init{
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Leelawadee UI",sans-serif;
+    }
+}

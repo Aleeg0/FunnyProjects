@@ -16,7 +16,7 @@
     }
 
     ul{
-        padding: 10px 8px 10px 0;
+        padding: 10px 8px;
         margin-right: 8px;
         display: flex;
         overflow-X: scroll;
@@ -80,7 +80,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 10px;
-        grid-row-gap: 20px;
+        grid-row-gap: 30px;
         margin-top: 30px;
 
         @media (max-width: 1000px) {
@@ -119,7 +119,7 @@
 
     &__big{
         width: 100%;
-        height: 62%;
+        height: 16rem;
         border-radius: 16px;
         margin-bottom: 8px;
 
@@ -129,7 +129,7 @@
     }
 
     &__bottom{
-        height: 23%;
+        height: 5rem;
         display: flex;
         justify-content: space-between;
         margin-bottom: 6px;

@@ -1,13 +1,11 @@
 :root{
-    --cl-background: #8b8b8b;
+    --cl-background: #d3d3d3;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "HelveticaNeue-Light", "HelveticaNeue-Light", "Arial", sans-serif;
-}
+@import "mixins";
+@import "Components/GalleryCollection/galleryCollection";
+
+@include init();
 
 body{
     background-color: var(--cl-background);
@@ -15,10 +13,4 @@ body{
 
 .app{
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-10%);
 }
-
-@import "Components/GalleryCollection/galleryCollection";

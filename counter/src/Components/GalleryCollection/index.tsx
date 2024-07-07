@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Collection from "./Collection";
 import {MockApiResCategories, MockApiResCollections} from "../../API/MockApi/MockApi";
-import CollectionSkeleton from "./CollectionSkeleton";
+import CollectionSkeleton from "./Skeletons/CollectionSkeleton";
+import CategorySkeleton from "./Skeletons/CategorySkeleton";
 
 const GalleryCollection = () => {
     // API data states
@@ -64,8 +65,8 @@ const GalleryCollection = () => {
             </header>
             <nav className="Gallery__navBar">
                 <ul>
-                    {categories ?
-                        categories.map((category,index) =>
+                    {!isCategoryLoading ?
+                        categories!.map((category,index) =>
                             <li
                                 key={index}
                                 className={index === currentCategory ? "active" : ""}
@@ -74,6 +75,9 @@ const GalleryCollection = () => {
                         )
                         :
                         <>
+                            <CategorySkeleton/>
+                            <CategorySkeleton/>
+                            <CategorySkeleton/>
                         </>
                     }
                 </ul>

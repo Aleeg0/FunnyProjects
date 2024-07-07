@@ -16,9 +16,6 @@ const GalleryCollection = () => {
     const [isCollectionLoading, setIsCollectionLoading] = useState<boolean>(true);
     const [isCategoryLoading, setIsCategoryLoading] = useState<boolean>(true);
 
-    //TODO добавить логику isLoading и ничего не найденно
-    //TODO добавить скелетоны для категорий и коллекций
-
     /*
         !!!
             I NOW THAT IT'S BAD TO USE STATIC PAGINATION LIMIT
